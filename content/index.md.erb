@@ -1,21 +1,28 @@
 ---
-title: "My Awesome Article"
+title: "ONETT: Knowledge Graph Generation for National Access Points"
 ---
 <header markdown="1">
 # <%= @item[:title] %>
 
 {:#authors}
-- <%= person 'John Doe', 'http://www.example.org/', 'http://www.example.org/#me' %>
+- <%= person 'John Toledo', 'http://www.example.org/', 'http://www.example.org/#me' %>
+- <%= person 'Adolfo Antón', 'http://www.example.org/', 'http://www.example.org/#me' %>
+- <%= person 'David Chaves-Fraga', 'http://www.example.org/', 'http://www.example.org/#me' %>
+- <%= person 'Oscar Corcho', 'http://www.example.org/', 'http://www.example.org/#me' %>
 
 {:#affiliations}
-- {:#myaffiliation} Awesome Inc.
+- {:#myaffiliation} Ontology Engineering Group, Universidad Politécnica de Madrid, Spain.
 
 <%= section 'abstract' %>
 </header>
 
 <main>
   <!-- Add sections by specifying their file name, excluding the '.md' suffix. -->
-  <%= section 'introduction'  %>
+  <%= section 'introduction' %>
+  <%= section 'onett' %>
+  <%= section 'demonstration' %>
+  <%= section 'conclusions' %>
+  
 </main>
 
 <footer></footer>
