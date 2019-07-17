@@ -1,3 +1,3 @@
-## Onett
+## The ONETT Demo
 {:#onett}
 

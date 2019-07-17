@@ -13,7 +13,7 @@
   <meta name="citation_author" content="David Chaves-Fraga" />
   <meta name="citation_author" content="Oscar Corcho" />
   
-  <meta name="citation_publication_date" content="2019/07/09" />
+  <meta name="citation_publication_date" content="2019/07/17" />
 </head>
 
 <body prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: https://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# dio: https://w3id.org/dio# as: https://www.w3.org/ns/activitystreams# oa: http://www.w3.org/ns/oa# ldp: http://www.w3.org/ns/ldp#" typeof="schema:CreativeWork sioc:Post prov:Entity">
@@ -33,21 +33,7 @@
 
   <section id="abstract">
     <h2>Abstract</h2>
-    <!-- Context      -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-<!-- Need         -->
-Vestibulum finibus dignissim augue, id pellentesque est facilisis non.
-<!-- Task         -->
-Donec fringilla dolor non neque iaculis blandit.
-<!-- Object       -->
-Praesent aliquet eleifend iaculis.
-<!-- Findings     -->
-Quisque pellentesque at odio ac bibendum.
-<!-- Conclusion   -->
-Pellentesque imperdiet felis urna, quis facilisis lacus gravida non.
-<!-- Perspectives -->
-Donec quis lectus eget sem tempor tristique pellentesque in dolor.</p>
-
+    <p>In this paper, we describe our implemented approach for the usage and exploitation of declarative mappings for the publication of open transport data from transport authorities and operators into an ontology based on TransModel. This will allow a homogeneous representation of transport data across EU transport-related organisations and will minimise the need to understand ad-hoc heterogeneous representation formats for transport data as currently published by them. We will show how we are creating and using RML mappings for the specific case of transforming GTFS data into a TransModel-based ontology. In the future, such data may be further transformed into other formats such as NeTEx.</p>
   </section>
 
 </header>
@@ -57,43 +43,39 @@ Donec quis lectus eget sem tempor tristique pellentesque in dolor.</p>
   <section id="introduction">
     <h2>Introduction</h2>
 
-    <p>This is a great article on the Semantic Web <span class="references">[<a href="#ref-1">1</a>]</span>, written in Markdown.</p>
+    <p>Transport data is being currently published by transport authorities and operators in many different formats, some of which are well-known de-facto standards, such as the Google Transit Feed Specification - GTFS), and some others are ad-hoc data formats whose structure is decided by the data publisher (e.g., current datasets and APIs published by <a href="https://opendata.emtmadrid.es/">Empresa Municipal de Transportes de Madrid in their open data portal</a>, <a href="https://www.zaragoza.es/sede/servicio/catalogo/327">tram information in Zaragoza</a>, etc.).</p>
 
-    <p>Make sure to <a href="http://www.treesmapsandtheorems.com/pdfs/TM&amp;Th-2.0-summary.pdf">write your document effectively</a>!</p>
+    <p>All of these datasets have similarities, associated to the fact that they are describing overlapping sets of information (schedules, stops, vehicles, lines, etc.). They are also made available, commonly, using tabular data formats. For example, GTFS feeds are essentially zip-compressed files containing sets of CSV files following the GTFS specification. And other data sources such as those mentioned above as examples provide the data either in CSV or JSON.</p>
 
-    <p class="todo">Write proper introduction.
-More information on snippets like this can be found on the <a href="https://github.com/rubensworks/ScholarMarkdown/wiki/Snippets">ScholarMarkdown wiki</a>.</p>
+    <p>Having all this data available in a homogeneous manner would actually reduce the total cost of reusing data sources, especially across operators/authorities and cities/regions. That is, developers may be able to develop one application that would be deployable in any city in the world with minor adaptations. This is already happening with GTFS, which is not only being used by Google Maps to provide data about transport infrastructure, but also for route planning, but also by other route planners, such as Navita.io and OpenTripPlanner.</p>
+
+    <p>To achieve this homogeneity, there are several options that may be followed:
+- Transport authorities and operators may agree on using the same data format and hence publish according to such data format. They know well the type of data that they handle, the quality properties on such data, etc., so they should be able to provide this data easily. To some extent, this is what is happening currently with GTFS, and what should happen in the near future in the European Union with NeTex, according to directive XXXX and regulation XXX.
+- 3rd parties (as well as operators and authorities themselves) may be able to create transformation rules that allow transforming the original data sources into other generally-agreed formats, republishing such transformed data either in the original data portals, if allowed to do so, or in other servers. Transformations may be done programmatically (that is, with ad-hoc code) or declaratively (using mappings in existing languages like R2RML or RML).</p>
+
+    <p>In this paper, we present our work on ensuring that declarative mappings can be used for the purpose of transforming transport data published by transport authorities and operators into a homogeneous representation based on TransModel (XXXXX, which will be further described in section 2). This data can then be further transformed into NeTEx so as to comply with the EU regulations for the publication of transport-related data in National Access Points.</p>
 
   </section>
 
   <section id="onett">
-    <h2>Onett</h2>
+    <h2>The ONETT Demo</h2>
 
   </section>
 
   <section id="demonstration">
-    <h2>Demonstration</h2>
+    <h2>Transmodel Ontology and GTFS</h2>
 
   </section>
 
   <section id="conclusions">
     <h2>Conclusions and Future Work</h2>
-
+    <p>The availability of homogeneous transport data from worldwide transport authorities and operators gives us the possibility of creating new types of applications related to transport (trip planners, fare calculators, ticket recommenders, etc.) that can be deployed easily in different regions or cities. In this paper, we have shown our approach to create such homogeneous transport data based on declarative mappings that can be used to generate transport knowledge graphs for any region or city in the world that is currently publishing data in GTFS. The mappings allow transforming GTFS data into RDF according to a TransModel-based ontology. Such data can be queried in a homogeneous manner so that the aforementioned applications can be created more easily.</p>
   </section>
 
   
 </main>
 
-<footer><section id="references">
-<h2>References</h2>
-<dl class="references">
-  <dt id="ref-1">[1]</dt>
-  <dd resource="#semanticweb" typeof="schema:Article">Berners-Lee, T., Hendler, J., Lassila, O., others: The semantic web. Scientific American. 284, 28–37 (2001).</dd>
-</dl>
-</section>
-</footer>
-
-
+<footer></footer>
 
 </body>
 </html>

@@ -1,15 +1,2 @@
 ## Abstract
-<!-- Context      -->
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-<!-- Need         -->
-Vestibulum finibus dignissim augue, id pellentesque est facilisis non.
-<!-- Task         -->
-Donec fringilla dolor non neque iaculis blandit.
-<!-- Object       -->
-Praesent aliquet eleifend iaculis.
-<!-- Findings     -->
-Quisque pellentesque at odio ac bibendum.
-<!-- Conclusion   -->
-Pellentesque imperdiet felis urna, quis facilisis lacus gravida non.
-<!-- Perspectives -->
-Donec quis lectus eget sem tempor tristique pellentesque in dolor.
+In this paper, we describe our implemented approach for the usage and exploitation of declarative mappings for the publication of open transport data from transport authorities and operators into an ontology based on TransModel. This will allow a homogeneous representation of transport data across EU transport-related organisations and will minimise the need to understand ad-hoc heterogeneous representation formats for transport data as currently published by them. We will show how we are creating and using RML mappings for the specific case of transforming GTFS data into a TransModel-based ontology. In the future, such data may be further transformed into other formats such as NeTEx.
