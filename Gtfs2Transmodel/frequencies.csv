@@ -1,0 +1,6 @@
+GFTS,Transmodel(Netex)
+trip_Id,<HeadwayJourneyGroup> <Id>
+start_time,<HeadwayJourneyGroup>  <FirstDepartureTime>
+end_time,<HeadwayJourneyGroup>  <LastDepartureTime>
+headway_secs,<HeadwayJourneyGroup> <ScheduledHeadwayInterval> 
+exact_times,<HeadwayJourneyGroup> <MaximumHeadwayInterval> ~= ScheduledHeadwayInterval>

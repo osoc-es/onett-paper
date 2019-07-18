@@ -1,0 +1,13 @@
+GTFS,Transmodel (NeTEx)
+pathways_id,NONE
+from_stop_id,NONE
+to_stop_id,NONE
+pathway_mode,NONE
+is_bidirectional,NONE
+length,NONE
+transversal_time,NONE
+stair_count,NONE
+max_slope,NONE
+min_width,NONE
+signposted_as,NONE
+reverse_signposted_as,NONE

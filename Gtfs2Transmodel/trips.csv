@@ -1,0 +1,14 @@
+GTFS,Transmodel (NeTEx)
+route_id,<ServiceJourney><LineRef>@ref
+service_id,<ServiceJourney><DayTypeRef>@ref
+trip_id,<ServiceJourney> @id
+trip_headsign,<ServiceJourney> <DestinationDisplayView><Name>
+trip_short_name,<ServiceJourney>  <ShortName>
+direction_id,"<ServiceJourney id=""gtfs> <DirectionRef>@ref"
+block_id,<ServiceJourney> <BlockRef >@ref
+shape_id,(<ServiceJourne> <JourneyPatternView><RouteView><LinkSequenceProjection > ++)
+wheelchair_accessible,NONE
+bikes_allowed,NONE
+,
+,
+, 

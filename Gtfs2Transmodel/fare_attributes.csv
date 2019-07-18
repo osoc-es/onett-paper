@@ -1,0 +1,15 @@
+GFTS,Transmodel(Netex)
+fare_id,<FareProduct> @id
+,<PreassignedFareProduct> @id
+price,<FareProduct>        <prices> <FareProductPrice><Amount>
+,<UsageParameter>	<prices> <UsageParameterPrice> <Amount>
+,<DistanceMatrixElement>	<prices> <DistanceMatrixElementPrice><Amount>
+,<FareStructureElement>	<prices> <FareStructureElementPrice><Amount>
+currency_type,<FareProduct>        <prices> <FareProductPrice><Currency>
+payment_method,<FareProduct> <ChargingMoment> 
+transfers,<FareProduct> <validityParameterAssignments>
+,<GenericParameterAssignment><FrequencyOfUse><MaximumNumberOfChanges>
+,<GenericParameterAssignment><FrequencyOfUse><TransfeType>
+,<GenericParameterAssignment><UsageValidityPeriod>
+transfer_duration,<FareProduct> <UsageValidityPeriod><StandardDuration>
+agency_id,

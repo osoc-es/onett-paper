@@ -1,0 +1,17 @@
+GTFS,Transmodel (NeTEx)
+trip_id,"<ServiceJourney version=""any""> @id"
+arrival_time,"<ServiceJourney version=""any""> <Call> <Arrival> <Time>"
+departure_time,"<ServiceJourney version=""any""> <Call> <Departure> <Time>"
+stop_id,"<ServiceJourney version=""any""> <Call> <ScheduledStopPointRef>"
+stop_sequence,"<ServiceJourney version=""any""> <Call> <Order>"
+stop_headsign,"<ServiceJourney version=""any""> <Call> <DestinationDisplayView><Name>"
+pickup_type,
+,"<ServiceJourney version=""any""> <Call> <Departure> <ForBoarding> "
+,"<ServiceJourney version=""any""> <Call> <Departure> <Flexible>"
+,"<ServiceJourney version=""any""> <Call> <RequestStop>"
+drop_off_type,
+,"<ServiceJourney version=""any""> <Call> <Arrival> <ForAlighting> "
+,"<ServiceJourney version=""any""> <Call> <Arrival> <IsFlexible>"
+,"<ServiceJourney version=""any""> <Call> <RequestStop>"
+shape_dist_traveled,"<ServiceJourney version=""any""> <Call> <OnwardLink> <Distance>"
+timepoint,NONE

@@ -1,0 +1,9 @@
+GFTS,Transmodel(Netex)
+fare_id,<FareProduct> @id  
+route_id,<FareProduct> <validityParameterAssignments>
+,<GenericParameterAssignment> <GroupOfLinesRef >
+origin_id,<Tariff> <distanceMatrixElements><DistanceMatrixElement> <StartTariffZoneRef>
+,<Tariff> <distanceMatrixElements><DistanceMatrixElement> <StartScheduledStopPointRef>
+destination_id,<Tariff> <distanceMatrixElements><DistanceMatrixElement> <EndTariffZoneRef>
+,<Tariff> <distanceMatrixElements><DistanceMatrixElement> <EndScheduledStopPointRef>
+contains_id,NONE

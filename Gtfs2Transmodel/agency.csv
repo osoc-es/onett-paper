@@ -1,0 +1,9 @@
+GTFS,Transmodel(Netex)
+agency_id,<Authority> @id
+agency_name,<Authority> <Name>
+agency_url,<Authority> <ContactDetails> <Url>
+agency_timezone,<Authority> <Locale> <TimeZone>
+agency_lang,<Authority> <Locale> <DefaultLanguage>
+agency_phone,<Authority> <ContactDetails><Phone>
+agency_fare_url,NONE
+agency_email,NONE

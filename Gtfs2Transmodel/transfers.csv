@@ -1,0 +1,9 @@
+GFTS,Transmodel(Netex)
+from_stop_id,<Connection><From PointRef> 
+to_stop_id,<Connection><To PointRef> 
+transfer_type,
+,<InterchangeRule> <Priority>
+,<InterchangeRule> <Guaranteed>
+,<Connection> <TransferDuration> <DefaultDuration>
+,<TransferRestriction> 
+min_transfer_time,<Connection><LineRef> 
