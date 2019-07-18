@@ -1,0 +1,4 @@
+GTFS,Transmodel(Netex)
+service_id,<ServiceCalendarFrame>@id
+date,<ServiceCalendarFrame> <contentValidityConditions> <AvailabilityCondition > <FromDate> & <ToDate>
+exception_type,<ServiceCalendarFrame> <contentValidityConditions> <AvailabilityCondition> <IsAvailable>

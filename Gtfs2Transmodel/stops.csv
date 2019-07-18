@@ -1,0 +1,16 @@
+GTFS,Transmodel(Netex)
+stop_id,<ScheduledStopPoint>@id
+stop_code,<ScheduledStopPoint> <PublicCode>
+stop_name,<ScheduledStopPoint> <Name>
+stop_desc,<ScheduledStopPoint> <Description>
+stop_lat,<ScheduledStopPoint> <Location> <Latitude>
+stop_lon,<ScheduledStopPoint> <Location> <Longitude>
+zone_id,<ScheduledStopPoint> <tariffZones> <TariffZoneRef> 
+stop_url,<ScheduledStopPoint>  <Url>
+location_type,<ScheduledStopPoint>         (<TypeOfPointRef 0 >)  <StopType>onStreetBus</StopType> //0 = stop point
+,<ScheduledStopPoint> 	(<TypeOfPointRef 1 >)  <StopType>railStation</StopType> // 1 = Station
+parent_station,<ScheduledStopPoint> <stopAreas> <StopAreaRef>
+stop_timezone,NONE
+wheelchair_boarding,NONE
+level_id,NONE
+platform_code,NONE

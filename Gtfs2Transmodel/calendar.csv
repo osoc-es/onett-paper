@@ -1,0 +1,11 @@
+GTFS,Transmodel(Netex)
+service_id,<DayType>@id  +  <ServiceCalendarFrame> @id
+monday,<DayType><properties><PropertyOfDay><DaysOfWeek>monday
+tuesday,<DayType><properties><PropertyOfDay><DaysOfWeek>tuesday 
+wednesday,<DayType><properties><PropertyOfDay><DaysOfWeek>wednesday 
+thursday,<DayType><properties><PropertyOfDay><DaysOfWeek>thursday 
+friday,<DayType><properties><PropertyOfDay><DaysOfWeek>friday 
+saturday,<DayType><properties><PropertyOfDay><DaysOfWeek>saturday 
+sunday,<DayType><properties><PropertyOfDay><DaysOfWeek>sunday 
+start_date,<ServiceCalendar><FromDate> 
+end_date,<ServiceCalenda><ToDate>
