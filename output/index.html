@@ -13,7 +13,7 @@
   <meta name="citation_author" content="David Chaves-Fraga" />
   <meta name="citation_author" content="Oscar Corcho" />
   
-  <meta name="citation_publication_date" content="2019/07/17" />
+  <meta name="citation_publication_date" content="2019/07/18" />
 </head>
 
 <body prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ v: http://www.w3.org/2006/vcard/ns# pimspace: http://www.w3.org/ns/pim/space# cc: https://creativecommons.org/ns# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# cal: http://www.w3.org/2002/12/cal/ical# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# org: http://www.w3.org/ns/org# biblio: http://purl.org/net/biblio# bibo: http://purl.org/ontology/bibo/ book: http://purl.org/NET/book/vocab# ov: http://open.vocab.org/terms/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# dio: https://w3id.org/dio# as: https://www.w3.org/ns/activitystreams# oa: http://www.w3.org/ns/oa# ldp: http://www.w3.org/ns/ldp#" typeof="schema:CreativeWork sioc:Post prov:Entity">
@@ -52,16 +52,85 @@
     <p>To achieve this homogeneity, there are several options that may be followed:</p>
 
     <ul>
-      <li>Transport authorities and operators may agree on using the same data format and hence publish according to such data format. They know well the type of data that they handle, the quality properties on such data, etc., so they should be able to provide this data easily. To some extent, this is what is happening currently with GTFS, and what should happen in the near future in the European Union with NeTex, according to directive XXXX and regulation XXX.</li>
+      <li>Transport authorities and operators may agree on using the same data format and hence publish according to such data format. They know well the type of data that they handle, the quality properties on such data, etc., so they should be able to provide this data easily. To some extent, this is what is happening currently with GTFS, and what should happen in the near future in the European Union with NeTex, according to directive 2010/40/EU and regulation 2017/1926 (MMTIS).</li>
       <li>3rd parties (as well as operators and authorities themselves) may be able to create transformation rules that allow transforming the original data sources into other generally-agreed formats, republishing such transformed data either in the original data portals, if allowed to do so, or in other servers. Transformations may be done programmatically (that is, with ad-hoc code) or declaratively (using mappings in existing languages like R2RML or RML).</li>
     </ul>
 
-    <p>In this paper, we present our work on ensuring that declarative mappings can be used for the purpose of transforming transport data published by transport authorities and operators into a homogeneous representation based on TransModel (XXXXX, which will be further described in section 2). This data can then be further transformed into NeTEx so as to comply with the EU regulations for the publication of transport-related data in National Access Points.</p>
+    <p>In this paper, we present our work on ensuring that declarative mappings can be used for the purpose of transforming transport data published by transport authorities and operators into a homogeneous representation based on Transmodel (the reference data model for public transport at European level, which will be further described in section 2). This data can then be further transformed into NeTEx so as to comply with the EU regulations for the publication of transport-related data in National Access Points.</p>
 
   </section>
 
   <section id="onett">
     <h2>Transmodel Ontology and GTFS</h2>
+
+    <p>In its drive to foster interoperability across Europe, the EU is requiring each Member State to allow access to transportation data via a National Access Point (NAP). According to the EU Regulation 2017/1926, all transportation authorities, transport operators and infrastructure managers must provide static and dynamic data in specific data formats (e.g., NeTEx, SIRI).
+- the EU Regulation applies to different transportation modes, including air, train, road vehicle, bus, ferry, metro, tram, shuttlebus, car-sharing, car-pooling and bike-sharing.</p>
+
+    <p>Transmodel is the European Reference Data Model for Public Transport. It provides a conceptual model of common public transport concepts and data structures that can be used to build many different kinds of public transport information system such as timetabling, fares, operational management, real-time data, journey planning. It is divided into eight different sections or  Parts: Common Concepts (CC), Public Transport Network Topology (NT), Network Description (ND), Operations Monitoring &amp; Control (OM), Fare Management (FM), Passenger Information (PI), Driver Management (DM), Management Information &amp; Statistics (MI).</p>
+
+    <p>This Parts of sections are usually developed by different standards or specific data formats. One of the most relevent implementations is NeTEx, which covers partially some features of the parts CC, NT, ND, FM and PI. NeTEx releases the 2017/1926 EU Regulation (May 2017) where the European Commission recognized NeTEx as a strategic standard for the cross-border exchange of data. The first step must be taken before December 2019 when every European country must provide data available in NeTEx format at National Access Points to allow  EU-wide multi-modal travel information services.</p>
+
+    <p>The General Transit Feed Specification (GTFS) is a de-facto standard for representing public transport data, a collection of at least five required, two optional required and up to fifteen CSV files (with extension .txt and preferably encoded as UTF-8) contained within a .zip file to describe a transit scheduled operations system. The aim of GTFS is providing at least trip-planning functionality.  It defines the headers and a set of rules that must be taken into account when the dataset is created. Each file, as well as its headers, can be mandatory or optional and they have relations among them. The specification supports the representation of several public transport features such as trips, routes, stops, times, fares or calendar.</p>
+
+    <p>Before performing the transformation from GTFS to the ontology based format of Transmodel, we analyse the relationship between the two standards. For example, in <a href="#comparison">Table 1</a> we show the relation between the properties of the calendar.txt in the GTFS model with the corresponding property in Transmodel using the NeTEx implementation. The full relation between the two standards is available online</p>
+
+    <figure id="comparison" class="table">
+
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center">GTFS-Calendar</th>
+            <th style="text-align: center">Transmodel (NeTEx)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center">service_id</td>
+            <td style="text-align: center">&lt;DayType&gt;@id + &lt;ServiceCalendarFrame&gt; @id</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">moday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;monday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">tuesday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;tuesday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">wednesday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;wednesday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">thursday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;thursday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">friday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;friday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">saturday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;saturday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">sunday</td>
+            <td style="text-align: center">&lt;DayType&gt;&lt;properties&gt;&lt;PropertyOfDay&gt;&lt;DaysOfWeek&gt;sunday</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">start_date</td>
+            <td style="text-align: center">&lt;ServiceCalendar&gt;&lt;FromDate&gt;</td>
+          </tr>
+          <tr>
+            <td style="text-align: center">end_date</td>
+            <td style="text-align: center">&lt;ServiceCalendar&gt;&lt;ToDate&gt;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figcaption>
+        <p><span class="label">Table 1:</span> Relation among GTFS-Calendar properties and Transmodel in NeTEx implementation</p>
+      </figcaption>
+    </figure>
 
   </section>
 
