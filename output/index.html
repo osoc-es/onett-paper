@@ -72,9 +72,7 @@
 
     <p>The General Transit Feed Specification (GTFS) is a de-facto standard for representing public transport data, a collection of at least five required, two optional required and up to fifteen CSV files (with extension .txt and preferably encoded as UTF-8) contained within a .zip file to describe a transit scheduled operations system. The aim of GTFS is providing at least trip-planning functionality.  It defines the headers and a set of rules that must be taken into account when the dataset is created. Each file, as well as its headers, can be mandatory or optional and they have relations among them. The specification supports the representation of several public transport features such as trips, routes, stops, times, fares or calendar.</p>
 
-    <p>In order to provide a better GTFS to NeTEx conversion and further full data interoperability, we have started to build up a Transmodel Ontology. The development is released in a <a href="https://github.com/oeg-upm/transmodel-ontology">github repository</a> where every material generated in the different activities carried out during the development of the vocabulary, as for instance use cases, user stories, glossary of terms, etc., will be available in the Vocabulary Wiki Project maintenance. Eventually, some queries will be performed in a SPARQL endpoint to test and exemplify its operability. Furthermore, in the context of work in a CEN Transmodel working group has published a base <a href="https://w3id.org/transmodel/terms#">URI</a> that is used by ONETT to perform the transformations.</p>
-
-    <p>Before performing the transformation from GTFS to the ontology based format of Transmodel, we analyse the relationship between the two standards. For example, in <a href="#comparison">Table 1</a> we show the relation between the properties of the calendar.txt in the GTFS model with the corresponding property in Transmodel using the NeTEx implementation. The full relation between the two standards is available <a href="https://github.com/osoc-es/onett-paper/tree/master/Gtfs2Transmodel">online</a>.</p>
+    <p>In order to provide a better GTFS to NeTEx conversion and further full data interoperability, we have started to build up a Transmodel Ontology. The development is released in a <a href="https://github.com/oeg-upm/transmodel-ontology">github repository</a> where every material generated in the different activities carried out during the development of the vocabulary, as for instance use cases, user stories, glossary of terms, etc., will be available in the Vocabulary Wiki Project maintenance. Eventually, some queries will be performed in a SPARQL endpoint to test and exemplify its operability. Furthermore, in the context of work in a CEN Transmodel working group has published a base <a href="https://w3id.org/transmodel/terms#">URI</a> that is used by ONETT to perform the transformations. Before performing the transformation from GTFS to the ontology based format of Transmodel, we analyse the relationship between the two standards. For example, in <a href="#comparison">Table 1</a> we show the relation between the properties of the calendar.txt in the GTFS model with the corresponding property in Transmodel using the NeTEx implementation. The full relation between the two standards is available <a href="https://github.com/osoc-es/onett-paper/tree/master/Gtfs2Transmodel">online</a>.</p>
 
     <figure id="comparison" class="table">
 
@@ -149,14 +147,14 @@
       <li>Knowledge Graph Generation: It runs the SDM-RDFizer engine to transform the raw data to RDF.</li>
     </ol>
 
-    <p>These steps are a black box for the transport authorities that want to obtain the knowledge graph from their GTFS feeds. Using the web application the user only has to upload the compressed feed or provide a URL and automatically ONETT generates the corresponding knowledge graph. With this approach, we provide a useful tool to generate National Access Point complaint data from a de-facto standard and very popular data format in a systematic manner.</p>
-
     <figure id="onett-workflow">
 <img src="images/workflow.jpg" alt="[ONETT workflow]" class="figure-narrow" />
 <figcaption>
         <p><span class="label">Fig. 1:</span> The ONETT workflow for the systematic generation of Knowledge Graph following Transmodel from GTFS feeds.</p>
       </figcaption>
 </figure>
+
+    <p>These steps are a black box for the transport authorities that want to obtain the knowledge graph from their GTFS feeds. Using the web application the user only has to upload the compressed feed or provide a URL and automatically ONETT generates the corresponding knowledge graph. With this approach, we provide a useful tool to generate National Access Point complaint data from a de-facto standard and very popular data format in a systematic manner.</p>
 
   </section>
 

@@ -9,7 +9,6 @@ In this specific case, we generate a [general mapping between GTFS](https://gith
 2. Mapping translation: It takes the general GTFS YARRRML mapping that represents  the full specification and generates a new mapping corresponding to the input data.
 3. Knowledge Graph Generation: It runs the SDM-RDFizer engine to transform the raw data to RDF.
 
-These steps are a black box for the transport authorities that want to obtain the knowledge graph from their GTFS feeds. Using the web application the user only has to upload the compressed feed or provide a URL and automatically ONETT generates the corresponding knowledge graph. With this approach, we provide a useful tool to generate National Access Point complaint data from a de-facto standard and very popular data format in a systematic manner.
 
 
 <figure id="onett-workflow">
@@ -20,5 +19,6 @@ The ONETT workflow for the systematic generation of Knowledge Graph following Tr
 </figure>
 
 
+These steps are a black box for the transport authorities that want to obtain the knowledge graph from their GTFS feeds. Using the web application the user only has to upload the compressed feed or provide a URL and automatically ONETT generates the corresponding knowledge graph. With this approach, we provide a useful tool to generate National Access Point complaint data from a de-facto standard and very popular data format in a systematic manner.
 
 
