@@ -1,0 +1,30 @@
+---
+title: "ONETT: Systematic Knowledge Graph Generation for National Access Points"
+---
+<header markdown="1">
+# <%= @item[:title] %>
+
+{:#authors}
+- <%= person 'Adolfo Antón-Bravo', 'https://infotics.es/', 'https://infotics.es/' %>
+- <%= person 'Jhon Toledo', '', '' %>
+- <%= person 'David Chaves-Fraga', 'https://dchaves.oeg-upm.net/', 'https://dchaves.oeg-upm.net/' %>
+- <%= person 'Oscar Corcho', 'http://www.oeg-upm.net/index.php/es/teachers/11-ocorcho/', 'http://www.oeg-upm.net/index.php/es/teachers/11-ocorcho/' %>
+
+{:#affiliations}
+- {:#myaffiliation} Ontology Engineering Group, Universidad Politécnica de Madrid, Spain.
+
+<%= section 'abstract' %>
+</header>
+
+<main>
+  <!-- Add sections by specifying their file name, excluding the '.md' suffix. -->
+  <%= section 'introduction' %>
+  <%= section 'onett' %>
+  <%= section 'demonstration' %>
+  <%= section 'conclusions' %>
+  
+</main>
+
+<footer>
+	<%= section 'acknowledgements' %>
+</footer>
